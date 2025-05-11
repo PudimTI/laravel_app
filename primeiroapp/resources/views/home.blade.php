@@ -52,6 +52,24 @@
                 </div>
             </div>
         @else
+            <div class="login">
+                <h2>Login</h2>
+                <form action="/login" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="login_name">Nome</label>
+                        <input name="login_name" type="text" id="login_name" placeholder="Digite seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="login_password">Senha</label>
+                        <input name="login_password" type="password" id="login_password" placeholder="Digite sua senha">
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+                <button class="btn-registro">Me registrar</button>
+            </div>
+
+
             <div class="registro">
                 <h2>Registro</h2>
                 <form action="/register" method="post">
@@ -70,25 +88,12 @@
                     </div>
                     <input type="submit" value="Registrar">
                 </form>
+
+                <button class="btn-login">Fazer login</button>
             </div>
             
-            <div class="login">
-                <h2>Login</h2>
-                <form action="/login" method="post">
-                    @csrf
-                    <div class="form-group">
-                        <label for="login_name">Nome</label>
-                        <input name="login_name" type="text" id="login_name" placeholder="Digite seu nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="login_password">Senha</label>
-                        <input name="login_password" type="password" id="login_password" placeholder="Digite sua senha">
-                    </div>
-                    <input type="submit" value="Login">
-                </form>
-            </div>
         @endauth
     </main>
-
+    <script src="{{ asset('js/home.js') }}"></script>
 </body>
 </html>
