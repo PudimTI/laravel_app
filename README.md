@@ -18,3 +18,7 @@ Infelizmente não consegui exportar o squema pois não estou em meu dispositivo 
 - DB_PASSWORD=root
 
 Com isso, apenas a realização de um "migrate" funcionará.
+
+## Midia
+
+![image](https://github.com/user-attachments/assets/b116cc7e-82d3-4324-9e32-69add01980c9)
