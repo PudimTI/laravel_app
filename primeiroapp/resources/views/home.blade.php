@@ -14,7 +14,7 @@
                     @csrf
                     <input type="submit" value="Logout">
                 </form>
-                <a href="/posts">Ver todos os posts</a>
+                <button class="btn" onclick="window.location.href='/posts'">Ver todos os posts</button>
             </div>
             
 
@@ -41,7 +41,7 @@
                             <h3>{{ $post->title }}</h3>
                             <h4>Criado por: {{ $post->user->name }}</h4>
                             <p>{{ $post->body }}</p>
-                            <p><a href="/edit-post/{{$post->id}}">Editar</a></p>
+                            <button class="btn" onclick="window.location.href='/edit-post/{{$post->id}}'">Editar</button>
                             <form action="/delete-post/{{ $post->id }}" method="post">
                                 @csrf
                                 @method('DELETE')

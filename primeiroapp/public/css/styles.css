@@ -9,6 +9,15 @@ body {
     align-items: center;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
 .registro, .login {
     background-color: white;
     padding: 2rem;
@@ -16,7 +25,6 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin-bottom: 2rem;
 }
 
 .registro h2, .login h2 {
@@ -67,13 +75,6 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.post {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
 .post-title {
     font-size: 1.5em;
     color: #333;
@@ -91,39 +92,23 @@ input[type="submit"]:hover {
     margin-top: 10px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-}
-
-.btn:hover {
-    opacity: 0.9;
-}
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2rem auto;
     padding: 0 1rem;
+}
+
+.container form {
+    width: 100%;
 }
 
 .container-posts {
     min-width: 500px;
-    max-width: 800px;
-    margin: 2rem auto;
+    max-width: 600px;
     padding: 0 1rem;
+    width: 100%;
 }
 
 .criar-post {
@@ -132,6 +117,7 @@ input[type="submit"]:hover {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+
 }
 
 .criar-post h2 {
@@ -144,6 +130,7 @@ input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
 }
 
 .criar-post input[type="text"] {
@@ -195,6 +182,12 @@ input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+}
+
+.posts-list form {
+    display: inline-block;
+    width: 100%;
 }
 
 .post {
@@ -202,6 +195,7 @@ input[type="submit"]:hover {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
 }
 
 .post h3 {
@@ -224,5 +218,30 @@ input[type="submit"]:hover {
 }
 
 .post .btn {
-    margin-right: 0.5rem;
-} 
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 10px 16px;
+    background-color: #fafcfd0e;
+    color: #007bff;
+    border: 1px solid #007bff;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form .btn {
+    width: 100%;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+

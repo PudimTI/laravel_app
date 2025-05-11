@@ -15,7 +15,7 @@
                     <input type="submit" value="Logout" class="btn">
                 </form>
             @endauth
-            <a href="/" class="btn">Voltar</a>
+            <button class="btn" onclick="window.location.href='/'">Voltar</button>
         </div>
 
         <div class="container-posts">
@@ -27,7 +27,7 @@
                         <h4>Criado por: {{ $post->user->name }}</h4>
                         <p>{{ $post->body }}</p>
                         @if (auth()->check() && auth()->user()->id === $post->user_id)
-                            <p><a href="/edit-post/{{$post->id}}" class="btn">Editar</a></p>
+                            <button class="btn" onclick="window.location.href='/edit-post/{{$post->id}}'">Editar</button>
                             <form action="/delete-post/{{ $post->id }}" method="post" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
