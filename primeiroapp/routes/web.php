@@ -21,6 +21,10 @@ Route::get('/posts', function () {
     return view('posts', ['posts' => $posts]);
 })->middleware(Authenticate::class); // Verifica se o usuário está autenticado
 
+Route::get('/post-category', function () {
+    return view('post-category');
+});
+
 // Rotas de usuários
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/logout', [UserController::class, 'logout']);

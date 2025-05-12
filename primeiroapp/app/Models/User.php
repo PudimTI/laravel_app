@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'type',
+        'subscription_level',
     ];
 
     /**
@@ -48,5 +50,13 @@ class User extends Authenticatable
 
     public function userPosts() {
         return $this->hasMany(Post::class, 'user_id');
+    }
+
+    public function isAdmin() {
+        return $this->type === 'admin';
+    }
+
+    public function hasSubscriptionLevel($level) {
+        return $this->subscription_level >= $level;
     }
 }

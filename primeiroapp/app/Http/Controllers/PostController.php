@@ -8,14 +8,14 @@ use App\Models\Post;
 class PostController extends Controller
 {
     public function deletePost(Post $post) {
-        if (auth()->user()->id === $post->user_id) {
+        if (auth()->user()->isAdmin() || auth()->user()->id === $post->user_id) {
             $post->delete();
         }
         return redirect('/');
     }
 
     public function updatePost(Request $request, Post $post) {
-        if (auth()->user()->id !== $post->user_id) {
+        if (!auth()->user()->isAdmin() && auth()->user()->id !== $post->user_id) {
             return redirect('/');
         }
 
@@ -31,7 +31,7 @@ class PostController extends Controller
     }
 
     public function editPost(Post $post) {
-        if (auth()->user()->id !== $post->user_id) {
+        if (!auth()->user()->isAdmin() && auth()->user()->id !== $post->user_id) {
             return redirect('/');
         }
 
@@ -39,6 +39,10 @@ class PostController extends Controller
     }
 
     public function createPost(Request $request) {
+        if (!auth()->user()->isAdmin() && !auth()->user()->type === 'user') {
+            return redirect('/');
+        }
+
         $incomingFields = $request->validate([
             'title' => 'required',
             'body' => 'required'

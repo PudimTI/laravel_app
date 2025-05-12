@@ -8,6 +8,7 @@
 <body>
     <main>
         @auth
+            
             <div class="container">
                 <h1>Bem vindo {{ auth()->user()->name }}!</h1>
                 <form action="/logout" method="post">
@@ -28,9 +29,18 @@
                             <input name="title" type="text" id="title" placeholder="Digite o título do post">
                         </div>
                         <div class="form-group">
-                            <label for="body">Conteúdo</label>
+                            <label for="body">Descrição</label>
                             <textarea name="body" id="body" placeholder="Digite o conteúdo do post"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="image">Imagem</label>
+                            <input name="image" type="file" id="image">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Categoria</label>
+                            <input name="category" type="text" id="category" placeholder="Digite a categoria do post">
+                        </div>
+
                         <input type="submit" value="Criar Post">
                     </form>
                 </div>

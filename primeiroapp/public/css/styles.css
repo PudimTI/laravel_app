@@ -1,3 +1,5 @@
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,6 +11,8 @@ body {
     align-items: center;
 }
 
+
+
 main {
     display: flex;
     flex-direction: column;
@@ -17,6 +21,7 @@ main {
     gap: 20px;
     width: 100%;
 }
+
 
 .login{
     background-color: white;
